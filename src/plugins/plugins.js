@@ -84,7 +84,10 @@ define([
   './faultManagement/FaultManagementPlugin',
   '../../example/exampleTags/plugin',
   './inspectorViews/plugin',
-  './inspectorDataVisualization/plugin'
+  './inspectorDataVisualization/plugin',
+  '../../ICD/CVAS/historical-telemetry-plugin',
+  '../../ICD/CVAS/realtime-telemetry-plugin',
+  '../../ICD/CVAS/CVAS-plugin'
 ], function (
   _,
   UTCTimeSystem,
@@ -149,7 +152,10 @@ define([
   FaultManagementPlugin,
   ExampleTags,
   InspectorViews,
-  InspectorDataVisualization
+  InspectorDataVisualization,
+  HistoricalTelemetryPlugin,
+  RealtimeTelemetryPlugin,
+  CVASPlugin
 ) {
   const plugins = {};
 
@@ -235,6 +241,10 @@ define([
   plugins.Timelist = TimeList.default;
   plugins.InspectorViews = InspectorViews.default;
   plugins.InspectorDataVisualization = InspectorDataVisualization.default;
+
+  plugins.HistoricalTelemetryPlugin = HistoricalTelemetryPlugin;
+  plugins.RealtimeTelemetryPlugin = RealtimeTelemetryPlugin;
+  plugins.CVASPlugin = CVASPlugin;
 
   return plugins;
 });

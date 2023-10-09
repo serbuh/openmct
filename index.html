@@ -135,52 +135,12 @@
     openmct.install(
       openmct.plugins.Conductor({
         menuOptions: [
-          {
-            name: 'Fixed',
-            timeSystem: 'utc',
-            bounds: {
-              start: Date.now() - THIRTY_MINUTES,
-              end: Date.now()
-            },
-            // commonly used bounds can be stored in history
-            // bounds (start and end) can accept either a milliseconds number
-            // or a callback function returning a milliseconds number
-            // a function is useful for invoking Date.now() at exact moment of preset selection
-            presets: [
-              {
-                label: 'Last Day',
-                bounds: {
-                  start: () => Date.now() - ONE_DAY,
-                  end: () => Date.now()
-                }
-              },
-              {
-                label: 'Last 2 hours',
-                bounds: {
-                  start: () => Date.now() - TWO_HOURS,
-                  end: () => Date.now()
-                }
-              },
-              {
-                label: 'Last hour',
-                bounds: {
-                  start: () => Date.now() - ONE_HOUR,
-                  end: () => Date.now()
-                }
-              }
-            ],
-            // maximum recent bounds to retain in conductor history
-            records: 10
-            // maximum duration between start and end bounds
-            // for utc-based time systems this is in milliseconds
-            // limit: ONE_DAY
-          },
-          {
+        {
             name: 'Realtime',
             timeSystem: 'utc',
             clock: 'local',
             clockOffsets: {
-              start: -THIRTY_MINUTES,
+              start: -ONE_MINUTE,
               end: THIRTY_SECONDS
             },
             presets: [
@@ -220,6 +180,46 @@
                 }
               }
             ]
+          },
+          {
+            name: 'Fixed',
+            timeSystem: 'utc',
+            bounds: {
+              start: Date.now() - THIRTY_MINUTES,
+              end: Date.now()
+            },
+            // commonly used bounds can be stored in history
+            // bounds (start and end) can accept either a milliseconds number
+            // or a callback function returning a milliseconds number
+            // a function is useful for invoking Date.now() at exact moment of preset selection
+            presets: [
+              {
+                label: 'Last Day',
+                bounds: {
+                  start: () => Date.now() - ONE_DAY,
+                  end: () => Date.now()
+                }
+              },
+              {
+                label: 'Last 2 hours',
+                bounds: {
+                  start: () => Date.now() - TWO_HOURS,
+                  end: () => Date.now()
+                }
+              },
+              {
+                label: 'Last hour',
+                bounds: {
+                  start: () => Date.now() - ONE_HOUR,
+                  end: () => Date.now()
+                }
+              }
+            ],
+            // maximum recent bounds to retain in conductor history
+            records: 10
+            // maximum duration between start and end bounds
+            // for utc-based time systems this is in milliseconds
+            // limit: ONE_DAY
           }
         ]
       })
@@ -240,6 +240,13 @@
     openmct.install(openmct.plugins.Timelist());
     openmct.install(openmct.plugins.BarChart());
     openmct.install(openmct.plugins.ScatterPlot());
+
+    ///////////
+    openmct.install(openmct.plugins.CVASPlugin());
+    openmct.install(openmct.plugins.HistoricalTelemetryPlugin('CVAS.telemetry', '/CVASHistory/', 'localhost'));
+    openmct.install(openmct.plugins.RealtimeTelemetryPlugin('CVAS.telemetry', '/CVASRealtime/', 'localhost'));
+    ///////////
+
     document.addEventListener('DOMContentLoaded', function () {
       openmct.start();
     });
