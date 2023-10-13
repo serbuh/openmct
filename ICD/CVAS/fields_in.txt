@@ -1,45 +1,45 @@
-State.Scouting_accuracy
-State.Mapping_infra_status
-State.Aggregate_state
-State.Init_state
-State.Ready_for_scan
-State.Collecting
-State.Anchoring
-State.Anchored
-State.Timestamp
-Status.scouting_mode
-Status.scouting_accuracy
-Status.required_scan_reason
-Status.bad_region
+S:State.Scouting_accuracy
+S:State.Mapping_infra_status
+S:State.Aggregate_state
+S:State.Init_state
+S:State.Ready_for_scan
+S:State.Collecting
+S:State.Anchoring
+S:State.Anchored
+S:State.Timestamp
+S:Status.scouting_mode
+S:Status.scouting_accuracy
+S:Status.required_scan_reason
+S:Status.bad_region
 Status.corrected_azimuth
-Status.mapping_infra_status
-Day Metry.Polarity
+S:Status.mapping_infra_status
+S:Day Metry.Polarity
 Day Metry.Position_error_vertical
 Day Metry.Position_error_horizontal
-Day Metry.Sensor_offset_(position)
-Day Metry.Sensor_offset_(angles)
-Tracker.Day_DoTrkCycle
-Tracker.Day___last_do_cycle
+S:Day Metry.Sensor_offset_(position)
+S:Day Metry.Sensor_offset_(angles)
+S:Tracker.Day_DoTrkCycle
+S:Tracker.Day___last_do_cycle
 Day Metry.frameNumber
-Day Metry.Telemetry_is_valid
+S:Day Metry.Telemetry_is_valid
 Day Metry.Lat
 Day Metry.Lon
 Day Metry.Alt
-Day Metry.primary_location_valid
-Day Metry.Height_Accuracy
+S:Day Metry.primary_location_valid
+S:Day Metry.Height_Accuracy
 Day Metry.Lat_(Sec)
 Day Metry.Lon_(Sec)
 Day Metry.Alt_(Sec)
-Day Metry.Secondary_location_valid
+S:Day Metry.Secondary_location_valid
 Day Metry.sensorId
 Day Metry.Azimuth
 Compass.Azimuth_Day
 Day Metry.Pitch
 Day Metry.Roll
-Day Metry.FOV
-Day Metry.Image_Enhancement
-Day Metry.Nav_status
-Day Metry.GPS_status
-Day Metry.Motion_state
-Day Metry.Position_data_quality
-Day Metry.Orientation_data_quality
+S:Day Metry.FOV
+S:Day Metry.Image_Enhancement
+S:Day Metry.Nav_status
+S:Day Metry.GPS_status
+S:Day Metry.Motion_state
+S:Day Metry.Position_data_quality
+S:Day Metry.Orientation_data_quality

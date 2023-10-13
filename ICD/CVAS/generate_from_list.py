@@ -9,7 +9,7 @@ prefix = """{
     "measurements": [
 """
 
-def get_field_desc(key_name):
+def get_field_desc(key_name, type):
     # Replace spaces
     key_name = key_name.replace(" ", "_")
     
@@ -23,8 +23,9 @@ f'            "key": "{key_name}",\n'
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
-                    "hints": {
+'''
+f'                    "format": "{type}",\n'
+'''                    "hints": {
                         "range": 1
                     }
                 },
@@ -60,10 +61,18 @@ with open(out_file, "w") as out_f:
         for i, field_name in enumerate(in_lines):
             # Remove new line symbol
             field_name = field_name.strip("\n")
-            print(field_name)
+
+            # String handling
+            string_prefix = "S:"
+            if field_name.startswith(string_prefix):
+                field_name = field_name[len(string_prefix):]
+                open_mct_type = "string"
+            else:
+                open_mct_type = "integer"
+            print(f"{open_mct_type}: {field_name}")
 
             # write
-            out_f.write(get_field_desc(field_name))
+            out_f.write(get_field_desc(field_name, open_mct_type))
 
             # Add comma only in between the field description dicts
             if i != len(in_lines) - 1:

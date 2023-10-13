@@ -92,8 +92,8 @@ const config = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'ICD/CVAS',
-          to: 'ICD/CVAS'
+          from: 'ICD/CVAS/CVASdictionary.json',
+          to: 'ICD/CVAS/CVASdictionary.json'
         },
         {
           from: 'src/images/favicons',

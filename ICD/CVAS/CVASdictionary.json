@@ -36,7 +36,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -61,7 +61,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -86,7 +86,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -111,7 +111,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -136,7 +136,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -161,7 +161,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -186,7 +186,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -211,7 +211,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -236,7 +236,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -261,7 +261,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -286,7 +286,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -311,7 +311,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -361,7 +361,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -386,7 +386,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -461,7 +461,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -486,7 +486,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -511,7 +511,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -536,7 +536,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -586,7 +586,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -686,7 +686,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -711,7 +711,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -811,7 +811,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -986,7 +986,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -1011,7 +1011,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -1036,7 +1036,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -1061,7 +1061,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -1086,7 +1086,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
@@ -1111,7 +1111,7 @@
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "string",
                     "hints": {
                         "range": 1
                     }
