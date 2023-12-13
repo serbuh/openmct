@@ -43,3 +43,25 @@ S:Day Metry.GPS_status
 S:Day Metry.Motion_state
 S:Day Metry.Position_data_quality
 S:Day Metry.Orientation_data_quality
+Blob_solution.Frame_Number
+S:Blob_solution.accuracy
+Blob_solution.lat_raw
+Blob_solution.lon_raw
+Blob_solution.alt_raw
+Blob_solution.azimut_raw
+Blob_solution.pitch_raw
+Blob_solution.roll_raw
+Blob_solution.lat_smooth_nav
+Blob_solution.lon_smooth_nav
+Blob_solution.alt_smooth_nav
+Blob_solution.azimut_smooth_nav
+Blob_solution.pitch_smooth_nav
+Blob_solution.roll_smooth_nav
+Blob_solution.lat_corrected
+Blob_solution.lon_corrected
+Blob_solution.alt_corrected
+Blob_solution.azimuth_corrected
+Blob_solution.pitch_corrected
+Blob_solution.roll_corrected
+S:Blob_solution.FOV_raw
+S:Blob_solution.FOV_corrected
