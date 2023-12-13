@@ -85,9 +85,9 @@ define([
   '../../example/exampleTags/plugin',
   './inspectorViews/plugin',
   './inspectorDataVisualization/plugin',
-  '../../ICD/CVAS/historical-telemetry-plugin',
-  '../../ICD/CVAS/realtime-telemetry-plugin',
-  '../../ICD/CVAS/CVAS-plugin'
+  '../../telemetry_plugin/historical-telemetry-plugin',
+  '../../telemetry_plugin/realtime-telemetry-plugin',
+  '../../telemetry_plugin/CVAS-plugin'
 ], function (
   _,
   UTCTimeSystem,

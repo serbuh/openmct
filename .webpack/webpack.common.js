@@ -92,8 +92,12 @@ const config = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: '../messages_interface/CVASdictionary.json',
+          from: 'messages_interface/CVASdictionary.json',
           to: 'messages_interface/CVASdictionary.json'
+        },
+        {
+          from: 'telemetry_plugin',
+          to: 'telemetry_plugin'
         },
         {
           from: 'src/images/favicons',
