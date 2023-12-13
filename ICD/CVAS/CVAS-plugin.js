@@ -8,7 +8,7 @@ define([
     function CVASPlugin() {
 
         function getCVASDictionary() {
-            return fetch('/ICD/CVAS/CVASdictionary.json').then(function (response) {
+            return fetch('../messages_interface/CVASdictionary.json').then(function (response) {
                 return response.json();
             });
 
