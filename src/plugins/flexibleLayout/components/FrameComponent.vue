@@ -31,6 +31,8 @@
       ref="frame"
       class="c-frame c-fl-frame__drag-wrapper is-selectable u-inspectable is-moveable"
       :draggable="draggable"
+      :aria-label="frameLabel"
+      role="group"
       @dragstart="initDrag"
     >
       <object-frame
@@ -95,6 +97,9 @@ export default {
     },
     draggable() {
       return this.isEditing;
+    },
+    frameLabel() {
+      return `${this.domainObject?.name} Frame` || 'Frame';
     }
   },
   mounted() {
@@ -161,8 +166,11 @@ export default {
         let originalClassName = this.dragGhost.classList[0];
         this.dragGhost.className = '';
         this.dragGhost.classList.add(originalClassName, iconClass);
+        this.dragGhost.textContent = '';
+        const span = document.createElement('span');
+        span.textContent = this.domainObject.name;
+        this.dragGhost.appendChild(span);
 
-        this.dragGhost.innerHTML = `<span>${this.domainObject.name}</span>`;
         event.dataTransfer.setDragImage(this.dragGhost, 0, 0);
       }
 
