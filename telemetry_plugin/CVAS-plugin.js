@@ -7,8 +7,8 @@ define([
 
     function CVASPlugin() {
 
-        function getCVASDictionary() {
-            return fetch('../messages_interface/CVASdictionary.json').then(function (response) {
+        function get_openmct_interface() {
+            return fetch('../messages_interface/openmct_interface.json').then(function (response) {
                 return response.json();
             });
 
@@ -17,7 +17,7 @@ define([
         // An object provider builds Domain Objects
         var CVAS_objectProvider = {
             get: function (identifier) {
-                return getCVASDictionary().then(function (dictionary) {
+                return get_openmct_interface().then(function (dictionary) {
                     //console.log("CVAS-dictionary-plugin.js: identifier.key = " + identifier.key);
                     if (identifier.key === 'CVAS') {
                         return {
@@ -55,7 +55,7 @@ define([
                     && domainObject.type === 'folder';
             },
             load: function (domainObject) {
-                return getCVASDictionary()
+                return get_openmct_interface()
                     .then(function (dictionary) {
                         return dictionary.measurements.map(function (m) {
                             return {

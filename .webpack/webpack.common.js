@@ -92,8 +92,8 @@ const config = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'messages_interface/CVASdictionary.json',
-          to: 'messages_interface/CVASdictionary.json'
+          from: 'messages_interface/openmct_interface.json',
+          to: 'messages_interface/openmct_interface.json'
         },
         {
           from: 'telemetry_plugin',

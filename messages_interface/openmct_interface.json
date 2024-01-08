@@ -3,8 +3,8 @@
     "key": "pl",
     "measurements": [
         {
-            "name": "Telem.Video_FPS",
-            "key": "Telem.Video_FPS",
+            "name": "Status.Counter",
+            "key": "Status.Counter",
 
             "values": [
                 {
@@ -28,8 +28,8 @@
             ]
         },
         {
-            "name": "Telem.frame",
-            "key": "Telem.frame",
+            "name": "General.Sinus",
+            "key": "General.Sinus",
 
             "values": [
                 {
@@ -103,31 +103,6 @@
             ]
         },
         {
-            "name": "Status.Counter",
-            "key": "Status.Counter",
-
-            "values": [
-                {
-                    "key": "value",
-                    "name": "Value",
-                    "units": "unit",
-                    "format": "integer",
-                    "hints": {
-                        "range": 1
-                    }
-                },
-                {
-                    "key": "utc",
-                    "source": "timestamp",
-                    "name": "Timestamp",
-                    "format": "utc",
-                    "hints": {
-                        "domain": 1
-                    }
-                }
-            ]
-        },
-        {
             "name": "Compass.yaw",
             "key": "Compass.yaw",
 
@@ -180,56 +155,6 @@
         {
             "name": "Compass.azimuth_out",
             "key": "Compass.azimuth_out",
-
-            "values": [
-                {
-                    "key": "value",
-                    "name": "Value",
-                    "units": "unit",
-                    "format": "integer",
-                    "hints": {
-                        "range": 1
-                    }
-                },
-                {
-                    "key": "utc",
-                    "source": "timestamp",
-                    "name": "Timestamp",
-                    "format": "utc",
-                    "hints": {
-                        "domain": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "State.Scouting_accuracy",
-            "key": "State.Scouting_accuracy",
-
-            "values": [
-                {
-                    "key": "value",
-                    "name": "Value",
-                    "units": "unit",
-                    "format": "integer",
-                    "hints": {
-                        "range": 1
-                    }
-                },
-                {
-                    "key": "utc",
-                    "source": "timestamp",
-                    "name": "Timestamp",
-                    "format": "utc",
-                    "hints": {
-                        "domain": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "State.Mapping_infra_status",
-            "key": "State.Mapping_infra_status",
 
             "values": [
                 {
