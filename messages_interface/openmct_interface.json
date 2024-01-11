@@ -28,33 +28,8 @@
             ]
         },
         {
-            "name": "General.Sinus",
-            "key": "General.Sinus",
-
-            "values": [
-                {
-                    "key": "value",
-                    "name": "Value",
-                    "units": "unit",
-                    "format": "integer",
-                    "hints": {
-                        "range": 1
-                    }
-                },
-                {
-                    "key": "utc",
-                    "source": "timestamp",
-                    "name": "Timestamp",
-                    "format": "utc",
-                    "hints": {
-                        "domain": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "Status.FOV",
-            "key": "Status.FOV",
+            "name": "Status.State",
+            "key": "Status.State",
 
             "values": [
                 {
@@ -78,8 +53,8 @@
             ]
         },
         {
-            "name": "Status.Sensor",
-            "key": "Status.Sensor",
+            "name": "Telem.vector",
+            "key": "Telem.vector",
 
             "values": [
                 {
@@ -103,8 +78,8 @@
             ]
         },
         {
-            "name": "Compass.yaw",
-            "key": "Compass.yaw",
+            "name": "Telem.Sinus",
+            "key": "Telem.Sinus",
 
             "values": [
                 {
@@ -128,8 +103,8 @@
             ]
         },
         {
-            "name": "Compass.telem_azimuth",
-            "key": "Compass.telem_azimuth",
+            "name": "Telem.Sinus_noisy",
+            "key": "Telem.Sinus_noisy",
 
             "values": [
                 {
@@ -153,8 +128,133 @@
             ]
         },
         {
-            "name": "Compass.azimuth_out",
-            "key": "Compass.azimuth_out",
+            "name": "Telem.Sinus_drifting",
+            "key": "Telem.Sinus_drifting",
+
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "unit",
+                    "format": "integer",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Location.lat",
+            "key": "Location.lat",
+
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "unit",
+                    "format": "integer",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Location.lon",
+            "key": "Location.lon",
+
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "unit",
+                    "format": "integer",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Location.alt",
+            "key": "Location.alt",
+
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "unit",
+                    "format": "integer",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Compass.azimuth",
+            "key": "Compass.azimuth",
+
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "unit",
+                    "format": "integer",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Compass.azimuth2",
+            "key": "Compass.azimuth2",
 
             "values": [
                 {
