@@ -69,14 +69,15 @@ const config = {
       csv: 'comma-separated-values',
       EventEmitter: 'eventemitter3',
       bourbon: 'bourbon.scss',
-      'plotly-basic': 'plotly.js-basic-dist',
-      'plotly-gl2d': 'plotly.js-gl2d-dist',
-      printj: path.join(projectRootDir, 'node_modules/printj/dist/printj.min.js'),
+      'plotly-basic': 'plotly.js-basic-dist-min',
+      'plotly-gl2d': 'plotly.js-gl2d-dist-min',
+      printj: 'printj/printj.mjs',
       styles: path.join(projectRootDir, 'src/styles'),
       MCT: path.join(projectRootDir, 'src/MCT'),
       testUtils: path.join(projectRootDir, 'src/utils/testUtils.js'),
       objectUtils: path.join(projectRootDir, 'src/api/objects/object-utils.js'),
-      utils: path.join(projectRootDir, 'src/utils')
+      utils: path.join(projectRootDir, 'src/utils'),
+      vue: 'vue/dist/vue.esm-bundler'
     }
   },
   plugins: [
