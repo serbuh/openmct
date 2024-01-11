@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Open MCT, Copyright (c) 2014-2023, United States Government
+ * Open MCT, Copyright (c) 2014-2024, United States Government
  * as represented by the Administrator of the National Aeronautics and Space
  * Administration. All rights reserved.
  *
@@ -20,8 +20,8 @@
  * at runtime from the About dialog for additional information.
  *****************************************************************************/
 
-import { expect } from '../pluginFixtures';
-const { waitForPlotsToRender } = require('../appActions');
+import { waitForPlotsToRender } from '../appActions.js';
+import { expect } from '../pluginFixtures.js';
 
 /**
  * Given a canvas and a set of points, tags the points on the canvas.

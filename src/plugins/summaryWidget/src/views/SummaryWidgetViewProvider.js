@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Open MCT, Copyright (c) 2014-2023, United States Government
+ * Open MCT, Copyright (c) 2014-2024, United States Government
  * as represented by the Administrator of the National Aeronautics and Space
  * Administration. All rights reserved.
  *
@@ -20,8 +20,8 @@
  * at runtime from the About dialog for additional information.
  *****************************************************************************/
 
-import SummaryWidgetEditView from '../SummaryWidget';
-import SummaryWidgetView from './SummaryWidgetView';
+import SummaryWidgetEditView from '../SummaryWidget.js';
+import SummaryWidgetView from './SummaryWidgetView.js';
 
 const DEFAULT_VIEW_PRIORITY = 100;
 export default function SummaryWidgetViewProvider(openmct) {

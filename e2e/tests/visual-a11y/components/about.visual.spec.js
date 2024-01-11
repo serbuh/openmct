@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Open MCT, Copyright (c) 2014-2023, United States Government
+ * Open MCT, Copyright (c) 2014-2024, United States Government
  * as represented by the Administrator of the National Aeronautics and Space
  * Administration. All rights reserved.
  *
@@ -24,9 +24,10 @@
 Tests the branding associated with the default deployment. At least the about modal for now
 */
 
-const { test, expect } = require('../../../pluginFixtures');
-const percySnapshot = require('@percy/playwright');
-const VISUAL_URL = require('../../../constants').VISUAL_URL;
+import percySnapshot from '@percy/playwright';
+
+import { VISUAL_URL } from '../../../constants.js';
+import { expect, test } from '../../../pluginFixtures.js';
 
 test.describe('Visual - Branding', () => {
   test.beforeEach(async ({ page }) => {

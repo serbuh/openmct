@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Open MCT, Copyright (c) 2014-2023, United States Government
+ * Open MCT, Copyright (c) 2014-2024, United States Government
  * as represented by the Administrator of the National Aeronautics and Space
  * Administration. All rights reserved.
  *
@@ -20,9 +20,10 @@
  * at runtime from the About dialog for additional information.
  *****************************************************************************/
 
-const { test } = require('../../../pluginFixtures.js');
-const { VISUAL_URL, MISSION_TIME } = require('../../../constants.js');
-const percySnapshot = require('@percy/playwright');
+import percySnapshot from '@percy/playwright';
+
+import { MISSION_TIME, VISUAL_URL } from '../../../constants.js';
+import { test } from '../../../pluginFixtures.js';
 
 //Declare the scope of the visual test
 const inspectorPane = '.l-shell__pane-inspector';

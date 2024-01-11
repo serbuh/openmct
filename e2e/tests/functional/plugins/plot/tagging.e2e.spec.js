@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Open MCT, Copyright (c) 2014-2023, United States Government
+ * Open MCT, Copyright (c) 2014-2024, United States Government
  * as represented by the Administrator of the National Aeronautics and Space
  * Administration. All rights reserved.
  *
@@ -24,18 +24,14 @@
 Tests to verify plot tagging functionality.
 */
 
-const { test, expect } = require('../../../../pluginFixtures');
-const {
-  basicTagsTests,
-  createTags,
-  testTelemetryItem
-} = require('../../../../helper/plotTagsUtils');
-const {
+import {
   createDomainObjectWithDefaults,
-  setRealTimeMode,
   setFixedTimeMode,
+  setRealTimeMode,
   waitForPlotsToRender
-} = require('../../../../appActions');
+} from '../../../../appActions.js';
+import { basicTagsTests, createTags, testTelemetryItem } from '../../../../helper/plotTagsUtils.js';
+import { expect, test } from '../../../../pluginFixtures.js';
 
 test.describe('Plot Tagging', () => {
   test.beforeEach(async ({ page }) => {

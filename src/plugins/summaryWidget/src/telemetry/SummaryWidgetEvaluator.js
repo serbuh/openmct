@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Open MCT, Copyright (c) 2014-2023, United States Government
+ * Open MCT, Copyright (c) 2014-2024, United States Government
  * as represented by the Administrator of the National Aeronautics and Space
  * Administration. All rights reserved.
  *
@@ -23,8 +23,8 @@
 import _ from 'lodash';
 import objectUtils from 'objectUtils';
 
-import eventHelpers from '../eventHelpers';
-import SummaryWidgetRule from './SummaryWidgetRule';
+import eventHelpers from '../eventHelpers.js';
+import SummaryWidgetRule from './SummaryWidgetRule.js';
 
 /**
  * evaluates rules defined in a summary widget against either lad or

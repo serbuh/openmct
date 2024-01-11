@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Open MCT, Copyright (c) 2014-2023, United States Government
+ * Open MCT, Copyright (c) 2014-2024, United States Government
  * as represented by the Administrator of the National Aeronautics and Space
  * Administration. All rights reserved.
  *
@@ -21,9 +21,9 @@
  *****************************************************************************/
 
 import autoflowTemplate from './autoflow-tabular.html';
-import AutoflowTabularConstants from './AutoflowTabularConstants';
-import AutoflowTabularController from './AutoflowTabularController';
-import VueView from './VueView';
+import AutoflowTabularConstants from './AutoflowTabularConstants.js';
+import AutoflowTabularController from './AutoflowTabularController.js';
+import VueView from './VueView.js';
 
 const ROW_HEIGHT = AutoflowTabularConstants.ROW_HEIGHT;
 const SLIDER_HEIGHT = AutoflowTabularConstants.SLIDER_HEIGHT;

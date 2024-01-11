@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Open MCT, Copyright (c) 2014-2023, United States Government
+ * Open MCT, Copyright (c) 2014-2024, United States Government
  * as represented by the Administrator of the National Aeronautics and Space
  * Administration. All rights reserved.
  *
@@ -24,11 +24,11 @@
 This test suite is dedicated to tests which verify search functionality.
 */
 
-const { test, expect, scanForA11yViolations } = require('../../avpFixtures');
-const { createDomainObjectWithDefaults } = require('../../appActions');
-const { VISUAL_URL } = require('../../constants');
+import percySnapshot from '@percy/playwright';
 
-const percySnapshot = require('@percy/playwright');
+import { createDomainObjectWithDefaults } from '../../appActions.js';
+import { expect, scanForA11yViolations, test } from '../../avpFixtures.js';
+import { VISUAL_URL } from '../../constants.js';
 
 test.describe('Grand Search @a11y', () => {
   let conditionWidget;

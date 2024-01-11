@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Open MCT, Copyright (c) 2014-2023, United States Government
+ * Open MCT, Copyright (c) 2014-2024, United States Government
  * as represented by the Administrator of the National Aeronautics and Space
  * Administration. All rights reserved.
  *
@@ -22,12 +22,12 @@
 
 import EventEmitter from 'EventEmitter';
 
-import * as templateHelpers from '../../../utils/template/templateHelpers';
+import * as templateHelpers from '../../../utils/template/templateHelpers.js';
 import conditionTemplate from '../res/conditionTemplate.html';
-import eventHelpers from './eventHelpers';
-import KeySelect from './input/KeySelect';
-import ObjectSelect from './input/ObjectSelect';
-import OperationSelect from './input/OperationSelect';
+import eventHelpers from './eventHelpers.js';
+import KeySelect from './input/KeySelect.js';
+import ObjectSelect from './input/ObjectSelect.js';
+import OperationSelect from './input/OperationSelect.js';
 
 /**
  * Represents an individual condition for a summary widget rule. Manages the

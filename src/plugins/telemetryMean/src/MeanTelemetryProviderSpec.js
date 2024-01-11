@@ -1,5 +1,5 @@
 /*****************************************************************************
- * Open MCT Web, Copyright (c) 2014-2023, United States Government
+ * Open MCT Web, Copyright (c) 2014-2024, United States Government
  * as represented by the Administrator of the National Aeronautics and Space
  * Administration. All rights reserved.
  *
@@ -21,8 +21,8 @@
  *****************************************************************************/
 /* eslint-disable no-invalid-this */
 
-import MeanTelemetryProvider from './MeanTelemetryProvider';
-import MockTelemetryApi from './MockTelemetryApi';
+import MeanTelemetryProvider from './MeanTelemetryProvider.js';
+import MockTelemetryApi from './MockTelemetryApi.js';
 
 const RANGE_KEY = 'value';
 
