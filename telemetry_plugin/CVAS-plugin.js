@@ -28,11 +28,11 @@ export default function CVASPlugin() {
                     return {
                         identifier: identifier,
                         name: measurement.name,
-                        type: 'CVAS.telemetry',
+                        type: 'TelemetryDomainObject',
                         telemetry: {
                             values: measurement.values
                         },
-                        location: 'CVAS.taxonomy:CVAS'
+                        location: 'TelemetryMainspace:CVAS'
                     };
                 }
             });
@@ -45,7 +45,7 @@ export default function CVASPlugin() {
     // "load" returns an array of Identifier objects (like the channels this telemetry stream offers)
     var CVAS_compositionProvider = {
         appliesTo: function (domainObject) {
-            return domainObject.identifier.namespace === 'CVAS.taxonomy'
+            return domainObject.identifier.namespace === 'TelemetryMainspace'
                 && domainObject.type === 'folder';
         },
         load: function (domainObject) {
@@ -53,7 +53,7 @@ export default function CVASPlugin() {
                 .then(function (dictionary) {
                     return dictionary.measurements.map(function (m) {
                         return {
-                            namespace: 'CVAS.taxonomy',
+                            namespace: 'TelemetryMainspace',
                             key: m.key
                         };
                     });
@@ -64,15 +64,15 @@ export default function CVASPlugin() {
     return function install(openmct) {
         // The addRoot function takes an "object identifier" as an argument
         openmct.objects.addRoot({
-            namespace: 'CVAS.taxonomy',
+            namespace: 'TelemetryMainspace',
             key: 'CVAS'
         });
 
-        openmct.objects.addProvider('CVAS.taxonomy', CVAS_objectProvider);
+        openmct.objects.addProvider('TelemetryMainspace', CVAS_objectProvider);
 
         openmct.composition.addProvider(CVAS_compositionProvider);
 
-        openmct.types.addType('CVAS.telemetry', {
+        openmct.types.addType('TelemetryDomainObject', {
             name: 'CVAS Telemetry Point',
             description: 'Telemetry of CVAS',
             cssClass: 'icon-telemetry',
