@@ -1,7 +1,7 @@
 
 export default function CVASPlugin() {
     function get_openmct_interface() {
-        return fetch('../messages_interface/openmct_interface.json').then(function (response) {
+        return fetch('../telemetry_plugin/openmct_interface.json').then(function (response) {
             return response.json();
         });
 
@@ -71,12 +71,10 @@ export default function CVASPlugin() {
 
         openmct.composition.addProvider(CVAS_compositionProvider);
 
-        //openmct.telemetry.addProvider(new CVASLimitProvider());
-
         openmct.types.addType('CVAS.telemetry', {
             name: 'CVAS Telemetry Point',
             description: 'Telemetry of CVAS',
-            cssClass: 'icon-telemetry'
+            cssClass: 'icon-telemetry',
         });
     };
 }

@@ -5,7 +5,6 @@
 
 export default function HistoricalTelemetryPlugin(desired_domain_object_type, serverURL, IP) {
     return function install(openmct) {
-        //var desired_domain_object_type = 'TFLEX.telemetry';
         var port = 16969;
         var provider = {
             supportsRequest: function (domainObject) {
@@ -21,16 +20,10 @@ export default function HistoricalTelemetryPlugin(desired_domain_object_type, se
                 //http gibts nicht mehr!!!!!!!!!!!!!!!!!
                 return fetch(url).then(function (resp) {
                     console.log(resp);
-
                     return resp.json();
                 });
-                // return http.get(url)
-                //     .then(function (resp) {
-                //         return resp.data;
-                //     });
             }
         };
-
         openmct.telemetry.addProvider(provider);
     };
 }

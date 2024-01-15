@@ -5,7 +5,6 @@
 
 export default function RealtimeTelemetryPlugin(desired_domain_object_type, serverURL, IP) {
     return function (openmct) {
-        //var desired_domain_object_type = 'TFLEX.telemetry';
         var port = 16969;
         var socket = new WebSocket('ws://' + IP + ':' + port + serverURL);
         var listeners = {};
@@ -21,24 +20,8 @@ export default function RealtimeTelemetryPlugin(desired_domain_object_type, serv
                     l(point);
                 });
             }
-            // if (listener[point.id]) {
-            //     listener[point.id](point);
-            // }
         };
 
-        // var provider = {
-        // supportsSubscribe: function (domainObject) {
-        // return domainObject.type === desired_domain_object_type;
-        // },
-        // subscribe: function (domainObject, callback) {
-        // listener[domainObject.identifier.key] = callback;
-        // socket.send('subscribe ' + domainObject.identifier.key);
-        // return function unsubscribe() {
-        // delete listener[domainObject.identifier.key];
-        // socket.send('unsubscribe ' + domainObject.identifier.key);
-        // };
-        // }
-        // };
         var provider = {
             supportsSubscribe: function (domainObject) {
                 return domainObject.type === desired_domain_object_type;
