@@ -11,8 +11,9 @@ export default function CVASPlugin() {
     var CVAS_objectProvider = {
         get: function (identifier) {
             return get_openmct_interface().then(function (dictionary) {
-                //console.log("CVAS-dictionary-plugin.js: identifier.key = " + identifier.key);
+                
                 if (identifier.key === 'CVAS') {
+                    console.log("Add root. Dictionary name: " + dictionary.name + " identifier: " + JSON.stringify(identifier, null, 4));
                     return {
                         identifier: identifier,
                         name: dictionary.name,
