@@ -5,13 +5,12 @@
         {
             "name": "Status.Counter",
             "key": "Status.Counter",
-
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "number",
                     "hints": {
                         "range": 1
                     }
@@ -30,7 +29,6 @@
         {
             "name": "Status.State",
             "key": "Status.State",
-
             "values": [
                 {
                     "key": "value",
@@ -53,9 +51,46 @@
             ]
         },
         {
+            "name": "Status.StateEnum",
+            "key": "Status.StateEnum",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "unit",
+                    "format": "enum",
+                    "hints": {
+                        "range": 1
+                    },
+                    "enumerations": [
+                        {
+                            "string": "BAD",
+                            "value": "0"
+                        },
+                        {
+                            "string": "NORMAL",
+                            "value": "1"
+                        },
+                        {
+                            "string": "GOOD",
+                            "value": "2"
+                        }
+                    ]
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
             "name": "Telem.vector",
             "key": "Telem.vector",
-
             "values": [
                 {
                     "key": "value",
@@ -80,13 +115,12 @@
         {
             "name": "Telem.Sinus",
             "key": "Telem.Sinus",
-
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "number",
                     "hints": {
                         "range": 1
                     }
@@ -105,13 +139,12 @@
         {
             "name": "Telem.Sinus_noisy",
             "key": "Telem.Sinus_noisy",
-
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "number",
                     "hints": {
                         "range": 1
                     }
@@ -130,13 +163,12 @@
         {
             "name": "Telem.Sinus_drifting",
             "key": "Telem.Sinus_drifting",
-
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "number",
                     "hints": {
                         "range": 1
                     }
@@ -155,13 +187,12 @@
         {
             "name": "Location.lat",
             "key": "Location.lat",
-
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "number",
                     "hints": {
                         "range": 1
                     }
@@ -180,13 +211,12 @@
         {
             "name": "Location.lon",
             "key": "Location.lon",
-
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "number",
                     "hints": {
                         "range": 1
                     }
@@ -205,13 +235,12 @@
         {
             "name": "Location.alt",
             "key": "Location.alt",
-
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "number",
                     "hints": {
                         "range": 1
                     }
@@ -230,13 +259,12 @@
         {
             "name": "Compass.azimuth",
             "key": "Compass.azimuth",
-
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "number",
                     "hints": {
                         "range": 1
                     }
@@ -255,13 +283,12 @@
         {
             "name": "Compass.azimuth2",
             "key": "Compass.azimuth2",
-
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
-                    "format": "integer",
+                    "format": "number",
                     "hints": {
                         "range": 1
                     }
