@@ -1,5 +1,5 @@
 
-export default function CVASPlugin() {
+export default function TelemetryDictionaryPlugin() {
     function get_openmct_interface() {
         return fetch('../telemetry_plugin/openmct_interface.json').then(function (response) {
             return response.json();
