@@ -11,9 +11,9 @@ export default function TelemetryDictionaryPlugin() {
     var CVAS_objectProvider = {
         get: function (identifier) {
             return get_openmct_interface().then(function (dictionary) {
-                
-                if (identifier.key === 'CVAS') {
-                    console.log("Add root. Dictionary name: " + dictionary.name + " identifier: " + JSON.stringify(identifier, null, 4));
+                if (identifier.key === 'RootObject') {
+                    // JSON.stringify(identifier, null, 4)
+                    // console.log("Getting root " + dictionary.name + " identifier: " + identifier.namespace + " -> " + identifier.key);
                     return {
                         identifier: identifier,
                         name: dictionary.name,
@@ -24,6 +24,7 @@ export default function TelemetryDictionaryPlugin() {
                     var measurement = dictionary.measurements.filter(function (m) {
                         return m.key === identifier.key;
                     })[0];
+                    // console.log("Getting measurement " + measurement.name + " identifier: " + identifier.namespace + " -> " + identifier.key)
 
                     return {
                         identifier: identifier,
@@ -32,7 +33,7 @@ export default function TelemetryDictionaryPlugin() {
                         telemetry: {
                             values: measurement.values
                         },
-                        location: 'TelemetryMainspace:CVAS'
+                        location: 'TelemetryMainspace:RootObject'
                     };
                 }
             });
@@ -45,6 +46,7 @@ export default function TelemetryDictionaryPlugin() {
     // "load" returns an array of Identifier objects (like the channels this telemetry stream offers)
     var CVAS_compositionProvider = {
         appliesTo: function (domainObject) {
+            // console.log("domainObject " + domainObject.name + " type " + domainObject.type)
             return domainObject.identifier.namespace === 'TelemetryMainspace'
                 && domainObject.type === 'folder';
         },
@@ -52,6 +54,7 @@ export default function TelemetryDictionaryPlugin() {
             return get_openmct_interface()
                 .then(function (dictionary) {
                     return dictionary.measurements.map(function (m) {
+                        // console.log("COMPOSITION load " + m.key)
                         return {
                             namespace: 'TelemetryMainspace',
                             key: m.key
@@ -65,7 +68,7 @@ export default function TelemetryDictionaryPlugin() {
         // The addRoot function takes an "object identifier" as an argument
         openmct.objects.addRoot({
             namespace: 'TelemetryMainspace',
-            key: 'CVAS'
+            key: 'RootObject'
         });
 
         openmct.objects.addProvider('TelemetryMainspace', CVAS_objectProvider);
