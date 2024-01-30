@@ -1,11 +1,11 @@
 /**
  * Basic historical telemetry plugin.
  */
-
+'TelemetryDomainObject', '/CVASHistory/', 'localhost'
 
 export default function HistoricalTelemetryPlugin(desired_domain_object_type, serverURL, IP) {
     return function install(openmct) {
-        var port = 16969;
+        // var port = 16969;
         var provider = {
             supportsRequest: function (domainObject) {
                 return domainObject.type === desired_domain_object_type;
