@@ -1,7 +1,6 @@
 /**
  * Basic historical telemetry plugin.
  */
-'TelemetryDomainObject', '/CVASHistory/', 'localhost'
 
 export default function HistoricalTelemetryPlugin(desired_domain_object_type, serverURL, IP) {
     return function install(openmct) {
