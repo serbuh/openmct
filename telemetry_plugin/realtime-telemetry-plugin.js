@@ -22,7 +22,7 @@ export default function RealtimeTelemetryPlugin(desired_domain_object_type, serv
         //     }
         // };
 
-        var listener = {};
+        var listeners = {};
 
         var socket = io()
         socket.on("connect", ()=>{
