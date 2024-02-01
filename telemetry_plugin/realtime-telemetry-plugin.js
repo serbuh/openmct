@@ -32,33 +32,32 @@ export default function RealtimeTelemetryPlugin(desired_domain_object_type, serv
             console.log("disconnected from socket")
         })
 
-        socket.on("realtime", points => {
-            console.log("realtime", points)
-
-            points.forEach(point => {
-                if (listeners[point.key]) {
-                    listeners[point.key](point);
-                }
-            });
+        socket.on("realtime", msg => {
+            // Print realtime message
+            console.log("realtime", msg)
+            
+            msg.forEach(point => {
+                listeners[point.key].forEach(f => f(point.value))
+            })
         });
-
+        
         var provider = {
             supportsSubscribe: function (domainObject) {
                 return domainObject.type === desired_domain_object_type;
             },
             subscribe: function (domainObject, callback, options) {
+                // Initialize listener for specific key
                 if (!listeners[domainObject.identifier.key]) {
-                    // Initialize listener for specific key
                     listeners[domainObject.identifier.key] = [];
                 }
-
+                
+                // If no listeners defined - add subscribe request
                 if (!listeners[domainObject.identifier.key].length) {
-                    // If no listeners defined - add subscribe request
-                    // socket.send('subscribe ' + domainObject.identifier.key);
                     socket.emit('subscribe', domainObject.identifier.key);
                 }
                 
                 // Add callback for the listener
+                console.log("Subscribe to ", domainObject.identifier.key)
                 listeners[domainObject.identifier.key].push(callback);
 
                 return function () {
@@ -68,7 +67,6 @@ export default function RealtimeTelemetryPlugin(desired_domain_object_type, serv
                         });
 
                     if (!listeners[domainObject.identifier.key].length) {
-                        // socket.send('unsubscribe ' + domainObject.identifier.key);
                         socket.emit('unsubscribe', domainObject.identifier.key);
                     }
                 };
