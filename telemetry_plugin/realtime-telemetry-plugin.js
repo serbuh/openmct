@@ -33,11 +33,12 @@ export default function RealtimeTelemetryPlugin(desired_domain_object_type, serv
         })
 
         socket.on("realtime", msg => {
-            // Print realtime message
-            console.log("realtime", msg)
-            
+            // Get realtime message
+            // console.log("realtime msg: ", msg)
             msg.forEach(point => {
-                listeners[point.key].forEach(f => f(point.value))
+                // console.log("Realtime " + point.id + ": " + point.value + " timestamp " + point.timestamp)
+                listeners[point.id]
+                    .forEach(f => f(point))
             })
         });
         
