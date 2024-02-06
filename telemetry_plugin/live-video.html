@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Open MCT Tutorials</title>
+    <script src="socket.io.js"></script>
+    <link rel="stylesheet" href="video-style.css">
+</head>
+
+<body>
+    <div class="vert-1">
+        <img id="img"/>
+        <input type="range" name="time" id="time_range">
+        <div id="control">
+            <button id="pause">Pause</button>
+            <button id="play">Play</button>
+            <button id="restart">Restart</button>
+    
+        </div>
+    </div>
+    <script>
+        const img=document.getElementById("img")
+        const time_range = document.getElementById("time_range")
+        const play_btn = document.getElementById("play")
+        const pause_btn = document.getElementById("pause")
+        const restart_btn = document.getElementById("restart")
+        const socket = io()
+        socket.on("connect", ()=>{
+            socket.emit ("start-live-video")
+            console.log("connected to socket")
+        })
+        socket.on("disconnect", ()=> {
+            socket.emit ("stop-live-video")
+            console.log("disconnected from socket")
+        })
+
+        restart_btn.addEventListener("click", ()=>{
+            socket.emit("restart-current-video")
+        })
+        play_btn.addEventListener("click", ()=>{
+            socket.emit("play-live-video")
+        })
+        pause_btn.addEventListener("click", ()=>{
+            socket.emit("pause-live-video")
+        })
+        let last_timestamp = 0
+        let last_image_data = ""
+        var changed = false
+        
+        socket.on("video-file-loaded", (data)=> {
+            console.log("video file loaded", data)
+            time_range.max = data.frames_count
+        })
+
+        socket.on("video-file-ended", (data)=> {
+            console.log("video file ended", ended)
+        })
+
+        socket.on("live-video", frame => {
+            console.log(frame)
+            time_range.max = frame.frames_count
+            last_image_data = `data:image/jpeg;base64,${frame.data}`
+            last_timestamp = frame.timestamp
+            time_range.value = frame.frame_index
+            changed = true
+        })
+
+        
+
+        function draw(){
+            if (changed){
+                img.src = last_image_data
+                changed = false
+            }
+            window.requestAnimationFrame(draw)
+        }
+        window.requestAnimationFrame(draw)
+
+    </script>
+</body>

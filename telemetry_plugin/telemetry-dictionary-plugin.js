@@ -1,9 +1,12 @@
+import dictionary_src from './openmct_interface.json' assert { type: 'json' };
+// window.dictionary = dictionary_src
 
 export default function TelemetryDictionaryPlugin() {
     function get_openmct_interface() {
-        return fetch('../telemetry_plugin/openmct_interface.json').then(function (response) {
-            return response.json();
-        });
+        return Promise.resolve(dictionary_src)
+        // return fetch('../telemetry_plugin/openmct_interface.json').then(function (response) {
+        //     return response.json();
+        // });
 
     }
 
