@@ -235,11 +235,13 @@
       openmct.install(openmct.plugins.Timelist());
       openmct.install(openmct.plugins.BarChart());
       openmct.install(openmct.plugins.ScatterPlot());
+      openmct.install(openmct.plugins.TelemetryMean());
       
       ///////////
       openmct.install(openmct.plugins.TelemetryDictionaryPlugin());
       openmct.install(openmct.plugins.HistoricalTelemetryPlugin('TelemetryDomainObject', '/CVASHistory/', 'localhost'));
       openmct.install(openmct.plugins.RealtimeTelemetryPlugin('TelemetryDomainObject', '/CVASRealtime/', 'localhost'));
+      openmct.install(openmct.plugins.UdpVIdeoPlugin());
       ///////////
 
       document.addEventListener('DOMContentLoaded', function () {
