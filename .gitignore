@@ -50,5 +50,3 @@ codecov
 
 # :(
 package-lock.json
-telemetry_plugin/my-items-telemetry.json
-telemetry_plugin/openmct_interface.json

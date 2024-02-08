@@ -10,11 +10,10 @@ export default function HistoricalTelemetryPlugin(desired_domain_object_type, se
             },
             request: async function (domainObject, options) {
                 var url = `/history/${domainObject.identifier.key}/${options.start}/${options.end}/${options.strategy}/${options.size}`
-                // console.log("Request for Historic data: " ,domainObject,options);
 
                 const resp = await fetch(url);
                 const data = await resp.json();
-                // console.log("Got Historic data: " ,data);
+                console.log("Got " + data.length + " history items for " + domainObject.identifier.key);
                 return data
             }
         };
