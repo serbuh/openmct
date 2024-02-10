@@ -3,7 +3,7 @@
     "key": "pl",
     "measurements": [
         {
-            "name": "Status.Counter",
+            "name": "Counter",
             "key": "Status.Counter",
             "values": [
                 {
@@ -27,7 +27,7 @@
             ]
         },
         {
-            "name": "Status.State",
+            "name": "State",
             "key": "Status.State",
             "values": [
                 {
@@ -51,7 +51,7 @@
             ]
         },
         {
-            "name": "Status.StateEnum",
+            "name": "StateEnum",
             "key": "Status.StateEnum",
             "values": [
                 {
@@ -89,7 +89,7 @@
             ]
         },
         {
-            "name": "Telem.vector",
+            "name": "vector",
             "key": "Telem.vector",
             "values": [
                 {
@@ -113,7 +113,7 @@
             ]
         },
         {
-            "name": "Telem.Sinus",
+            "name": "Sinus",
             "key": "Telem.Sinus",
             "values": [
                 {
@@ -137,7 +137,7 @@
             ]
         },
         {
-            "name": "Telem.Sinus_noisy",
+            "name": "Sinus_noisy",
             "key": "Telem.Sinus_noisy",
             "values": [
                 {
@@ -161,7 +161,7 @@
             ]
         },
         {
-            "name": "Telem.Sinus_drifting",
+            "name": "Sinus_drifting",
             "key": "Telem.Sinus_drifting",
             "values": [
                 {
@@ -185,7 +185,7 @@
             ]
         },
         {
-            "name": "Location.lat",
+            "name": "lat",
             "key": "Location.lat",
             "values": [
                 {
@@ -209,7 +209,7 @@
             ]
         },
         {
-            "name": "Location.lon",
+            "name": "lon",
             "key": "Location.lon",
             "values": [
                 {
@@ -233,7 +233,7 @@
             ]
         },
         {
-            "name": "Location.alt",
+            "name": "alt",
             "key": "Location.alt",
             "values": [
                 {
@@ -257,7 +257,7 @@
             ]
         },
         {
-            "name": "Compass.azimuth",
+            "name": "azimuth",
             "key": "Compass.azimuth",
             "values": [
                 {
@@ -281,7 +281,7 @@
             ]
         },
         {
-            "name": "Compass.azimuth2",
+            "name": "azimuth2",
             "key": "Compass.azimuth2",
             "values": [
                 {
