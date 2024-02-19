@@ -1,6 +1,7 @@
 {
     "name": "PredefinedTelemetry",
     "key": "pl",
+    "version": "2024_02_11",
     "measurements": [
         {
             "name": "Counter",
