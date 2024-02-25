@@ -1,11 +1,15 @@
 {
-    "name": "PredefinedTelemetry",
-    "key": "pl",
     "version": "2024_02_11",
     "measurements": [
         {
-            "name": "Counter",
-            "key": "Status.Counter",
+            "name": "Folder_0",
+            "key": "Folder_0_key",
+            "node_type": "folder"
+        },
+        {
+            "name": "A",
+            "key": "Folder_0.A",
+            "node_type": "element",
             "values": [
                 {
                     "key": "value",
@@ -28,268 +32,15 @@
             ]
         },
         {
-            "name": "State",
-            "key": "Status.State",
+            "name": "B",
+            "key": "Folder_0.B",
+            "node_type": "element",
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
                     "format": "string",
-                    "hints": {
-                        "range": 1
-                    }
-                },
-                {
-                    "key": "utc",
-                    "source": "timestamp",
-                    "name": "Timestamp",
-                    "format": "utc",
-                    "hints": {
-                        "domain": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "StateEnum",
-            "key": "Status.StateEnum",
-            "values": [
-                {
-                    "key": "value",
-                    "name": "Value",
-                    "units": "unit",
-                    "format": "enum",
-                    "hints": {
-                        "range": 1
-                    },
-                    "enumerations": [
-                        {
-                            "string": "BAD",
-                            "value": "0"
-                        },
-                        {
-                            "string": "NORMAL",
-                            "value": "1"
-                        },
-                        {
-                            "string": "GOOD",
-                            "value": "2"
-                        }
-                    ]
-                },
-                {
-                    "key": "utc",
-                    "source": "timestamp",
-                    "name": "Timestamp",
-                    "format": "utc",
-                    "hints": {
-                        "domain": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "vector",
-            "key": "Telem.vector",
-            "values": [
-                {
-                    "key": "value",
-                    "name": "Value",
-                    "units": "unit",
-                    "format": "string",
-                    "hints": {
-                        "range": 1
-                    }
-                },
-                {
-                    "key": "utc",
-                    "source": "timestamp",
-                    "name": "Timestamp",
-                    "format": "utc",
-                    "hints": {
-                        "domain": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "Sinus",
-            "key": "Telem.Sinus",
-            "values": [
-                {
-                    "key": "value",
-                    "name": "Value",
-                    "units": "unit",
-                    "format": "number",
-                    "hints": {
-                        "range": 1
-                    }
-                },
-                {
-                    "key": "utc",
-                    "source": "timestamp",
-                    "name": "Timestamp",
-                    "format": "utc",
-                    "hints": {
-                        "domain": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "Sinus_noisy",
-            "key": "Telem.Sinus_noisy",
-            "values": [
-                {
-                    "key": "value",
-                    "name": "Value",
-                    "units": "unit",
-                    "format": "number",
-                    "hints": {
-                        "range": 1
-                    }
-                },
-                {
-                    "key": "utc",
-                    "source": "timestamp",
-                    "name": "Timestamp",
-                    "format": "utc",
-                    "hints": {
-                        "domain": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "Sinus_drifting",
-            "key": "Telem.Sinus_drifting",
-            "values": [
-                {
-                    "key": "value",
-                    "name": "Value",
-                    "units": "unit",
-                    "format": "number",
-                    "hints": {
-                        "range": 1
-                    }
-                },
-                {
-                    "key": "utc",
-                    "source": "timestamp",
-                    "name": "Timestamp",
-                    "format": "utc",
-                    "hints": {
-                        "domain": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "lat",
-            "key": "Location.lat",
-            "values": [
-                {
-                    "key": "value",
-                    "name": "Value",
-                    "units": "unit",
-                    "format": "number",
-                    "hints": {
-                        "range": 1
-                    }
-                },
-                {
-                    "key": "utc",
-                    "source": "timestamp",
-                    "name": "Timestamp",
-                    "format": "utc",
-                    "hints": {
-                        "domain": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "lon",
-            "key": "Location.lon",
-            "values": [
-                {
-                    "key": "value",
-                    "name": "Value",
-                    "units": "unit",
-                    "format": "number",
-                    "hints": {
-                        "range": 1
-                    }
-                },
-                {
-                    "key": "utc",
-                    "source": "timestamp",
-                    "name": "Timestamp",
-                    "format": "utc",
-                    "hints": {
-                        "domain": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "alt",
-            "key": "Location.alt",
-            "values": [
-                {
-                    "key": "value",
-                    "name": "Value",
-                    "units": "unit",
-                    "format": "number",
-                    "hints": {
-                        "range": 1
-                    }
-                },
-                {
-                    "key": "utc",
-                    "source": "timestamp",
-                    "name": "Timestamp",
-                    "format": "utc",
-                    "hints": {
-                        "domain": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "azimuth",
-            "key": "Compass.azimuth",
-            "values": [
-                {
-                    "key": "value",
-                    "name": "Value",
-                    "units": "unit",
-                    "format": "number",
-                    "hints": {
-                        "range": 1
-                    }
-                },
-                {
-                    "key": "utc",
-                    "source": "timestamp",
-                    "name": "Timestamp",
-                    "format": "utc",
-                    "hints": {
-                        "domain": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "azimuth2",
-            "key": "Compass.azimuth2",
-            "values": [
-                {
-                    "key": "value",
-                    "name": "Value",
-                    "units": "unit",
-                    "format": "number",
                     "hints": {
                         "range": 1
                     }

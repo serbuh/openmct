@@ -1,12 +1,58 @@
 import dictionary_src from './openmct_interface.json' assert { type: 'json' };
 // window.dictionary = dictionary_src
 
+class SuperObjectProvider {
+    #get_openmct_interface() {
+        return Promise.resolve(dictionary_src)
+    }
+
+    constructor(openmct) {
+        this.openmct = openmct;
+    }
+
+    async get(identifier) {
+        //console.log("GET! " + identifier.key);//JSON.stringify(identifier, null, 4))
+        return this.#get_openmct_interface().then(function (dictionary) {
+            // console.log(JSON.stringify(identifier, null, 4))
+            if (identifier.key === 'RootObject') {
+                // Create root folder
+                return {
+                    identifier: identifier,
+                    name: "PredefinedTelemetry",
+                    type: 'folder',
+                    location: 'ROOT'
+                };
+            } else {
+                var measurement = dictionary.measurements.filter(function (m) {
+                    return m.key === identifier.key;
+                })[0];
+                if (measurement.node_type === 'folder') {
+                    //console.log("FOLDER " + identifier.key)
+                    return {
+                        identifier: identifier,
+                        name: measurement.name,
+                        type: 'folder',
+                        location: 'TelemetryMainspace:RootObject'
+                    };    
+                } else {
+                    return {
+                        identifier: identifier,
+                        name: measurement.name,
+                        type: 'TelemetryDomainObject',
+                        telemetry: {
+                            values: measurement.values
+                        },
+                        location: 'TelemetryMainspace:Folder_0_key'
+                    };
+                }
+            }
+        });
+    }
+}
+
 export default function TelemetryDictionaryPlugin() {
     function get_openmct_interface() {
         return Promise.resolve(dictionary_src)
-        // return fetch('../telemetry_plugin/openmct_interface.json').then(function (response) {
-        //     return response.json();
-        // });
     }
 
     return function install(openmct) {
@@ -16,53 +62,22 @@ export default function TelemetryDictionaryPlugin() {
             key: 'RootObject'
         });
         
+        const objectProvider = new SuperObjectProvider(
+            openmct
+        );
+
         // An object provider builds Domain Objects
-        openmct.objects.addProvider('TelemetryMainspace', {
-            get: function (identifier) {
-                return get_openmct_interface().then(function (dictionary) {
-                    // console.log(JSON.stringify(identifier, null, 4))
-                    // console.log("Getting root " + dictionary.name + " identifier: " + identifier.namespace + " -> " + identifier.key);
-                    if (identifier.key === 'RootObject') {
-                        return {
-                            identifier: identifier,
-                            name: dictionary.name,
-                            type: 'folder',
-                            location: 'ROOT'
-                        };
-                    // } else if (identifier.key === 'Somekey') {
-                    //     console.log("FOLDER!" + JSON.stringify(identifier, null, 4))
-                    //     return {
-                    //         identifier: identifier,
-                    //         name: "PAPKA",
-                    //         type: 'folder',
-                    //         location: 'TelemetryMainspace:RootObject'
-                    //     };
-                    } else {
-                        var measurement = dictionary.measurements.filter(function (m) {
-                            return m.key === identifier.key;
-                        })[0];
-    
-                        return {
-                            identifier: identifier,
-                            name: measurement.name,
-                            type: 'TelemetryDomainObject',
-                            telemetry: {
-                                values: measurement.values
-                            },
-                            location: 'TelemetryMainspace:RootObject'
-                        };
-                    }
-                });
-            }
-        });
+        openmct.objects.addProvider('TelemetryMainspace', objectProvider);
 
         // Composition provider
         openmct.composition.addProvider({
             appliesTo: function (domainObject) {
-                // console.log("domainObject " + JSON.stringify(domainObject, null, 4))
+                
+                // const predicate = domainObject.key === "RootObject"
+                // console.log("AppliesTo? "+JSON.stringify(domainObject, null, 4) + "\n " + predicate)
                 return domainObject.identifier.namespace === 'TelemetryMainspace'
                     && domainObject.type === 'folder';
-                    // && domainObject.identifier.key === 'RootObject';
+                    // && domainObject.identifier.key === "RootObject";
             },
             load: function (domainObject) {
                 return get_openmct_interface()
