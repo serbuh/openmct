@@ -2,14 +2,44 @@
     "version": "2024_02_11",
     "measurements": [
         {
-            "name": "Folder_0",
-            "key": "Folder_0_key",
-            "node_type": "folder"
+            "name": "Status",
+            "key": "Status",
+            "nested_under": "RootFolder"
+        },
+        {
+            "name": "Telem",
+            "key": "Telem",
+            "nested_under": "RootFolder"
+        },
+        {
+            "name": "Location",
+            "key": "Location",
+            "nested_under": "RootFolder"
+        },
+        {
+            "name": "Compass",
+            "key": "Compass",
+            "nested_under": "RootFolder"
+        },
+        {
+            "name": "Magnitometer",
+            "key": "Compass.Magnitometer",
+            "nested_under": "Compass"
         },
         {
             "name": "A",
-            "key": "Folder_0.A",
-            "node_type": "element",
+            "key": "Compass.Magnitometer.A",
+            "nested_under": "Compass.Magnitometer"
+        },
+        {
+            "name": "B",
+            "key": "Compass.Magnitometer.B",
+            "nested_under": "Compass.Magnitometer"
+        },
+        {
+            "name": "Counter",
+            "key": "Status.Counter",
+            "nested_under": "Status",
             "values": [
                 {
                     "key": "value",
@@ -32,15 +62,279 @@
             ]
         },
         {
-            "name": "B",
-            "key": "Folder_0.B",
-            "node_type": "element",
+            "name": "State",
+            "key": "Status.State",
+            "nested_under": "Status",
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
                     "units": "unit",
                     "format": "string",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "StateEnum",
+            "key": "Status.StateEnum",
+            "nested_under": "Status",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "unit",
+                    "format": "enum",
+                    "hints": {
+                        "range": 1
+                    },
+                    "enumerations": [
+                        {
+                            "string": "BAD",
+                            "value": "0"
+                        },
+                        {
+                            "string": "NORMAL",
+                            "value": "1"
+                        },
+                        {
+                            "string": "GOOD",
+                            "value": "2"
+                        }
+                    ]
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "vector",
+            "key": "Telem.vector",
+            "nested_under": "Telem",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "unit",
+                    "format": "string",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Sinus",
+            "key": "Telem.Sinus",
+            "nested_under": "Telem",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "unit",
+                    "format": "number",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Sinus_noisy",
+            "key": "Telem.Sinus_noisy",
+            "nested_under": "Telem",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "unit",
+                    "format": "number",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Sinus_drifting",
+            "key": "Telem.Sinus_drifting",
+            "nested_under": "Telem",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "unit",
+                    "format": "number",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "lat",
+            "key": "Location.lat",
+            "nested_under": "Location",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "unit",
+                    "format": "number",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "lon",
+            "key": "Location.lon",
+            "nested_under": "Location",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "unit",
+                    "format": "number",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "alt",
+            "key": "Location.alt",
+            "nested_under": "Location",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "unit",
+                    "format": "number",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "azimuth",
+            "key": "Compass.Magnitometer.A.azimuth",
+            "nested_under": "Compass.Magnitometer.A",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "unit",
+                    "format": "number",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "azimuth2",
+            "key": "Compass.Magnitometer.B.azimuth2",
+            "nested_under": "Compass.Magnitometer.B",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "unit",
+                    "format": "number",
                     "hints": {
                         "range": 1
                     }
