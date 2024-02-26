@@ -135,8 +135,8 @@
               timeSystem: 'utc',
               clock: 'local',
               clockOffsets: {
-                start: -FIVE_MINUTES,
-                end: ONE_MINUTE
+                start: -ONE_MINUTE,
+                end: THIRTY_SECONDS
               },
               presets: [
                 {
@@ -236,11 +236,20 @@
       openmct.install(openmct.plugins.BarChart());
       openmct.install(openmct.plugins.ScatterPlot());
       
-      ///////////
+      ////////////////////// Custom addons
+      // Install custom plugins
       openmct.install(openmct.plugins.TelemetryDictionaryPlugin());
       openmct.install(openmct.plugins.HistoricalTelemetryPlugin('TelemetryDomainObject', '/CVASHistory/', 'localhost'));
       openmct.install(openmct.plugins.RealtimeTelemetryPlugin('TelemetryDomainObject', '/CVASRealtime/', 'localhost'));
-      ///////////
+      
+      // Set realtime timeconductor mode as a default
+      openmct.time.setMode('realtime');
+
+      var myIndicator = openmct.indicators.simpleIndicator();
+      myIndicator.text("Very Nice");
+      myIndicator.iconClass("icon-asterisk")
+      openmct.indicators.add(myIndicator);
+      //////////////////////
 
       document.addEventListener('DOMContentLoaded', function () {
         openmct.start();
