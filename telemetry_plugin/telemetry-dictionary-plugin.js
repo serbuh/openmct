@@ -22,7 +22,7 @@ export default function TelemetryDictionaryPlugin() {
                         // Create root folder
                         return {
                             identifier: identifier,
-                            name: "PredefinedTelemetry",
+                            name: dictionary.name || "PredefinedTelemetry",
                             type: 'folder',
                             location: 'ROOT'
                         };
