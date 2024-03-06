@@ -24,7 +24,8 @@ export default function TelemetryDictionaryPlugin() {
                             identifier: identifier,
                             name: dictionary.name || "PredefinedTelemetry",
                             type: 'folder',
-                            location: 'ROOT'
+                            location: 'ROOT',
+                            notes:dictionary.notes 
                         };
                     } else {
                         var measurement = dictionary.measurements.filter(function (m) {
@@ -37,6 +38,7 @@ export default function TelemetryDictionaryPlugin() {
                                 identifier: identifier,
                                 name: measurement.name,
                                 type: 'TelemetryDomainObject',
+                                notes:measurement.notes,
                                 telemetry: {
                                     values: measurement.values
                                 },
@@ -48,6 +50,7 @@ export default function TelemetryDictionaryPlugin() {
                                 identifier: identifier,
                                 name: measurement.name,
                                 type: 'folder',
+                                notes:measurement.notes,
                                 location: 'TelemetryMainspace:' + measurement.nested_under
                             };    
                         }
