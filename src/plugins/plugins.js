@@ -89,6 +89,7 @@ import WebPagePlugin from './webPage/plugin.js';
 import HistoricalTelemetryPlugin from '../../telemetry_plugin/historical-telemetry-plugin.js';
 import RealtimeTelemetryPlugin from '../../telemetry_plugin/realtime-telemetry-plugin.js';
 import TelemetryDictionaryPlugin from '../../telemetry_plugin/telemetry-dictionary-plugin.js';
+import ImageryPlugin from '../../telemetry_plugin/imagery-plugin.js';
 
 
 
@@ -182,5 +183,6 @@ plugins.InspectorDataVisualization = InspectorDataVisualization;
 plugins.HistoricalTelemetryPlugin = HistoricalTelemetryPlugin;
 plugins.RealtimeTelemetryPlugin = RealtimeTelemetryPlugin;
 plugins.TelemetryDictionaryPlugin = TelemetryDictionaryPlugin;
+plugins.ImageryPlugin = ImageryPlugin;
 
 export default plugins;
