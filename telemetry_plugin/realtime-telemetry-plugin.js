@@ -50,24 +50,21 @@ export default function RealtimeTelemetryPlugin(desired_domain_object_type, serv
                 // Initialize listener for specific key
                 if (!listeners[domainObject.identifier.key]) {
                     listeners[domainObject.identifier.key] = [];
-                }
-                
-                // If no listeners defined - add subscribe request
-                if (!listeners[domainObject.identifier.key].length) {
                     socket.emit('subscribe', domainObject.identifier.key);
                 }
                 
                 // Add callback for the listener
                 console.log("Subscribe to ", domainObject.identifier.key)
                 listeners[domainObject.identifier.key].push(callback);
-
-                return function () {
-                    listeners[domainObject.identifier.key] =
-                        listeners[domainObject.identifier.key].filter(function (c) {
-                            return c !== callback;
-                        });
-
-                    if (!listeners[domainObject.identifier.key].length) {
+                
+                return function unsubscribe () {                    
+                    listeners[domainObject.identifier.key]
+                    .filter(c => c == callback)
+                    .forEach ((_,index,arr) => delete arr[index])
+                    
+                    if (listeners[domainObject.identifier.key].length==0) {
+                        delete listeners[domainObject.identifier.key]
+                        console.log("Unsubscribe from ", domainObject.identifier.key)
                         socket.emit('unsubscribe', domainObject.identifier.key);
                     }
                 };
