@@ -24,7 +24,7 @@
 
 let openmctInstance;
 
-function ImageryPlugin() {
+export default function VideoPlugin() {
   return function install(openmct) {
     openmctInstance = openmct;
     openmct.types.addType('example.imagery', {

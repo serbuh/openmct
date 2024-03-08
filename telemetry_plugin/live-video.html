@@ -4,7 +4,7 @@
 <head>
     <title>Open MCT Tutorials</title>
     <script src="socket.io.js"></script>
-    <link rel="stylesheet" href="video-style.css">
+    <!-- <link rel="stylesheet" href="video-style.css"> -->
 </head>
 
 <body>
@@ -58,10 +58,10 @@
 
         socket.on("live-video", frame => {
             console.log(frame)
-            time_range.max = frame.frames_count
+            // time_range.max = frame.frames_count
             last_image_data = `data:image/jpeg;base64,${frame.data}`
-            last_timestamp = frame.timestamp
-            time_range.value = frame.frame_index
+            // last_timestamp = frame.timestamp
+            // time_range.value = frame.frame_index
             changed = true
         })
 
