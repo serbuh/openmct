@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Open MCT Tutorials</title>
+    <title>Live Video</title>
     <script src="socket.io.js"></script>
     <!-- <link rel="stylesheet" href="video-style.css"> -->
 </head>
@@ -10,17 +10,16 @@
 <body>
     <div class="vert-1">
         <img id="img"/>
-        <input type="range" name="time" id="time_range">
-        <div id="control">
+        <!-- <input type="range" name="time" id="time_range"> -->
+        <!-- <div id="control">
             <button id="pause">Pause</button>
             <button id="play">Play</button>
             <button id="restart">Restart</button>
-    
-        </div>
+        </div> -->
     </div>
     <script>
         const img=document.getElementById("img")
-        const time_range = document.getElementById("time_range")
+        // const time_range = document.getElementById("time_range")
         const play_btn = document.getElementById("play")
         const pause_btn = document.getElementById("pause")
         const restart_btn = document.getElementById("restart")
@@ -34,15 +33,15 @@
             console.log("disconnected from socket")
         })
 
-        restart_btn.addEventListener("click", ()=>{
-            socket.emit("restart-current-video")
-        })
-        play_btn.addEventListener("click", ()=>{
-            socket.emit("play-live-video")
-        })
-        pause_btn.addEventListener("click", ()=>{
-            socket.emit("pause-live-video")
-        })
+        // restart_btn.addEventListener("click", ()=>{
+        //     socket.emit("restart-current-video")
+        // })
+        // play_btn.addEventListener("click", ()=>{
+        //     socket.emit("play-live-video")
+        // })
+        // pause_btn.addEventListener("click", ()=>{
+        //     socket.emit("pause-live-video")
+        // })
         let last_timestamp = 0
         let last_image_data = ""
         var changed = false
@@ -57,15 +56,14 @@
         })
 
         socket.on("live-video", frame => {
-            console.log(frame)
+            frames_count = frame.frames_count
+            console.log("Frame count: " + frames_count)
             // time_range.max = frame.frames_count
             last_image_data = `data:image/jpeg;base64,${frame.data}`
-            // last_timestamp = frame.timestamp
+            last_timestamp = frame.timestamp
             // time_range.value = frame.frame_index
             changed = true
         })
-
-        
 
         function draw(){
             if (changed){
