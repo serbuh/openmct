@@ -254,8 +254,8 @@
       // openmct.install(openmct.plugins.RemoteClockHistoricalTelemetryPlugin('RemoteClockDomainObject'));
       // openmct.install(openmct.plugins.RemoteClockRealtimeTelemetryPlugin('RemoteClockDomainObject'));
       openmct.install(openmct.plugins.TelemetryDictionaryPlugin());
-      openmct.install(openmct.plugins.HistoricalTelemetryPlugin('TelemetryDomainObject', '/CVASHistory/', 'localhost'));
-      openmct.install(openmct.plugins.RealtimeTelemetryPlugin('TelemetryDomainObject', '/CVASRealtime/', 'localhost'));
+      openmct.install(openmct.plugins.HistoricalTelemetryPlugin('TelemetryDomainObject'));
+      openmct.install(openmct.plugins.RealtimeTelemetryPlugin('TelemetryDomainObject'));
       openmct.install(openmct.plugins.VideoPlugin());
 
       // Set realtime timeconductor mode as a default
