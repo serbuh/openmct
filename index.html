@@ -127,9 +127,22 @@
           showAsView: ['summary-widget', 'example.imagery']
         })
       );
+      // openmct.install(openmct.plugins.RemoteClock({
+      //     namespace: 'myTelemetry',
+      //     key: 'myRemoteClock'
+      // }));
       openmct.install(
         openmct.plugins.Conductor({
           menuOptions: [
+            // {
+            //   name: "Remote",
+            //   timeSystem: 'utc',
+            //   clock: 'remote-clock',
+            //   clockOffsets: {
+            //       start: - FIFTEEN_MINUTES,
+            //       end: THIRTY_SECONDS
+            //   }
+            // },
             {
               name: 'Realtime',
               timeSystem: 'utc',
@@ -238,6 +251,8 @@
       
       ////////////////////// Custom addons
       // Install custom plugins
+      // openmct.install(openmct.plugins.RemoteClockHistoricalTelemetryPlugin('RemoteClockDomainObject'));
+      // openmct.install(openmct.plugins.RemoteClockRealtimeTelemetryPlugin('RemoteClockDomainObject'));
       openmct.install(openmct.plugins.TelemetryDictionaryPlugin());
       openmct.install(openmct.plugins.HistoricalTelemetryPlugin('TelemetryDomainObject', '/CVASHistory/', 'localhost'));
       openmct.install(openmct.plugins.RealtimeTelemetryPlugin('TelemetryDomainObject', '/CVASRealtime/', 'localhost'));
