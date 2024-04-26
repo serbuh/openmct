@@ -251,8 +251,8 @@
       
       ////////////////////// Custom addons
       // Install custom plugins
-      // openmct.install(openmct.plugins.RemoteClockHistoricalTelemetryPlugin('RemoteClockDomainObject'));
-      // openmct.install(openmct.plugins.RemoteClockRealtimeTelemetryPlugin('RemoteClockDomainObject'));
+      openmct.install(openmct.plugins.RemoteClockHistoricalTelemetryPlugin('RemoteClockDomainObject'));
+      openmct.install(openmct.plugins.RemoteClockRealtimeTelemetryPlugin('RemoteClockDomainObject'));
       openmct.install(openmct.plugins.TelemetryDictionaryPlugin());
       openmct.install(openmct.plugins.HistoricalTelemetryPlugin('TelemetryDomainObject'));
       openmct.install(openmct.plugins.RealtimeTelemetryPlugin('TelemetryDomainObject'));
