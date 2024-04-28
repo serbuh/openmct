@@ -7,19 +7,19 @@ export default function RemoteClockRealtimeTelemetryPlugin(desired_domain_object
     let listeners = {};
     let socket = io();
     socket.on('connect', () => {
-      console.log('connected to socket');
+      console.log('connected to socket (RemoteClock)');
     });
     socket.on('disconnect', () => {
-      console.log('disconnected from socket');
+      console.log('disconnected from socket (RemoteClock)');
     });
 
-    socket.on('realtime', (msg) => {
+    socket.on('realtime-tick', (msg) => {
       // Get realtime message
-      console.log('realtime msg: ', msg);
-    //   msg.forEach((point) => {
-    //     // console.log("Realtime " + point.id + ": " + point.value + " timestamp " + point.timestamp)
-    //     listeners[point.id].forEach((f) => f(point));
-    //   });
+      console.log('Tick: ', msg);
+      // msg.forEach((point) => {
+      //   // console.log("Realtime " + point.id + ": " + point.value + " timestamp " + point.timestamp)
+      //   listeners[point.id].forEach((f) => f(point));
+      // });
     });
 
     let provider = {
