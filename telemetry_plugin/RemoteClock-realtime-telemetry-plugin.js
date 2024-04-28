@@ -34,7 +34,7 @@ export default function RemoteClockRealtimeTelemetryPlugin(desired_domain_object
         }
 
         // Add callback for the listener
-        console.log('Subscribe to ', domainObject.identifier.key);
+        console.log('Subscribe to RemoteClock', domainObject.identifier.key);
         listeners[domainObject.identifier.key].push(callback);
 
         return function unsubscribe() {
@@ -44,7 +44,7 @@ export default function RemoteClockRealtimeTelemetryPlugin(desired_domain_object
 
           if (listeners[domainObject.identifier.key].length === 0) {
             delete listeners[domainObject.identifier.key];
-            console.log('Unsubscribe from ', domainObject.identifier.key);
+            console.log('Unsubscribe from RemoteClock', domainObject.identifier.key);
             socket.emit('unsubscribe', domainObject.identifier.key);
           }
         };
