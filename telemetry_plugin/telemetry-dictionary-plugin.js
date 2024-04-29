@@ -1,5 +1,7 @@
 import dictionary_src from './openmct_interface.json' assert { type: 'json' };
 
+let object_type = 'TelemetryDomainObject';
+
 export default function TelemetryDictionaryPlugin() {
     function get_openmct_interface() {
         return Promise.resolve(dictionary_src)
@@ -37,7 +39,7 @@ export default function TelemetryDictionaryPlugin() {
                             return {
                                 identifier: identifier,
                                 name: measurement.name,
-                                type: 'TelemetryDomainObject',
+                                type: object_type,
                                 notes:measurement.notes,
                                 telemetry: {
                                     values: measurement.values
@@ -82,7 +84,7 @@ export default function TelemetryDictionaryPlugin() {
             }
         });
 
-        openmct.types.addType('TelemetryDomainObject', {
+        openmct.types.addType(object_type, {
             name: 'Telemetry Point',
             description: 'Telemetry',
             cssClass: 'icon-telemetry',

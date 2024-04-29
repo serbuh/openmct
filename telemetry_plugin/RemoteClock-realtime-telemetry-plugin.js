@@ -15,7 +15,7 @@ export default function RemoteClockRealtimeTelemetryPlugin(desired_domain_object
 
     socket.on('realtime-tick', (msg) => {
       // Get realtime message
-      console.log('Tick: ', msg);
+      console.log('Tick: ', msg.timestamp);
       // msg.forEach((point) => {
       //   // console.log("Realtime " + point.id + ": " + point.value + " timestamp " + point.timestamp)
       //   listeners[point.id].forEach((f) => f(point));
