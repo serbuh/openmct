@@ -88,6 +88,7 @@ import WebPagePlugin from './webPage/plugin.js';
 
 import RemoteClockHistoricalTelemetryPlugin from '../../telemetry_plugin/RemoteClock-historical-telemetry-plugin.js';
 import RemoteClockRealtimeTelemetryPlugin from '../../telemetry_plugin/RemoteClock-realtime-telemetry-plugin.js';
+import RemoteClockProviderPlugin from '../../telemetry_plugin/RemoteClock-provider-plugin.js';
 import HistoricalTelemetryPlugin from '../../telemetry_plugin/historical-telemetry-plugin.js';
 import RealtimeTelemetryPlugin from '../../telemetry_plugin/realtime-telemetry-plugin.js';
 import TelemetryDictionaryPlugin from '../../telemetry_plugin/telemetry-dictionary-plugin.js';
@@ -184,6 +185,7 @@ plugins.InspectorDataVisualization = InspectorDataVisualization;
 
 plugins.RemoteClockHistoricalTelemetryPlugin = RemoteClockHistoricalTelemetryPlugin;
 plugins.RemoteClockRealtimeTelemetryPlugin = RemoteClockRealtimeTelemetryPlugin;
+plugins.RemoteClockProviderPlugin = RemoteClockProviderPlugin;
 plugins.HistoricalTelemetryPlugin = HistoricalTelemetryPlugin;
 plugins.RealtimeTelemetryPlugin = RealtimeTelemetryPlugin;
 plugins.TelemetryDictionaryPlugin = TelemetryDictionaryPlugin;

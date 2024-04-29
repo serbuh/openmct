@@ -18,7 +18,7 @@ export default function RealtimeTelemetryPlugin(desired_domain_object_type) {
       // Get realtime message
       // console.log("realtime msg: ", msg)
       msg.forEach((point) => {
-        // console.log("Realtime " + point.id + ": " + point.value + " timestamp " + point.timestamp)
+        //console.log('Realtime ' + point.id + ': ' + point.value + ' timestamp ' + point.timestamp);
         listeners[point.id].forEach((f) => f(point));
       });
     });

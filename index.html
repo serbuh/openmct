@@ -127,9 +127,13 @@
           showAsView: ['summary-widget', 'example.imagery']
         })
       );
+      ///////////// Remote clock
+      openmct.install(openmct.plugins.RemoteClockHistoricalTelemetryPlugin('RemoteClockDomainObject'));
+      openmct.install(openmct.plugins.RemoteClockRealtimeTelemetryPlugin('RemoteClockDomainObject'));
+      openmct.install(openmct.plugins.RemoteClockProviderPlugin());
       // openmct.install(openmct.plugins.RemoteClock({
-      //     namespace: 'myTelemetry',
-      //     key: 'myRemoteClock'
+      //     namespace: 'RemoteClockMainspace',
+      //     key: 'RemoteClockKey'
       // }));
       openmct.install(
         openmct.plugins.Conductor({
@@ -251,16 +255,15 @@
       
       ////////////////////// Custom addons
       // Install custom plugins
-      openmct.install(openmct.plugins.RemoteClockHistoricalTelemetryPlugin('RemoteClockDomainObject'));
-      openmct.install(openmct.plugins.RemoteClockRealtimeTelemetryPlugin('RemoteClockDomainObject'));
-      openmct.install(openmct.plugins.TelemetryDictionaryPlugin());
       openmct.install(openmct.plugins.HistoricalTelemetryPlugin('TelemetryDomainObject'));
       openmct.install(openmct.plugins.RealtimeTelemetryPlugin('TelemetryDomainObject'));
+      openmct.install(openmct.plugins.TelemetryDictionaryPlugin());
       openmct.install(openmct.plugins.VideoPlugin());
 
       // Set realtime timeconductor mode as a default
       openmct.time.setMode('realtime');
-
+      
+      // Indicator icon
       var myIndicator = openmct.indicators.simpleIndicator();
       myIndicator.text("Very Nice");
       myIndicator.iconClass("icon-asterisk")

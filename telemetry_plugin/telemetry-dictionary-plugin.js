@@ -1,6 +1,7 @@
 import dictionary_src from './openmct_interface.json' assert { type: 'json' };
 
 let object_type = 'TelemetryDomainObject';
+let object_namespace = 'TelemetryMainspace';
 
 export default function TelemetryDictionaryPlugin() {
     function get_openmct_interface() {
@@ -10,12 +11,12 @@ export default function TelemetryDictionaryPlugin() {
     return function install(openmct) {
         // The addRoot function takes an "object identifier" as an argument
         openmct.objects.addRoot({
-            namespace: 'TelemetryMainspace',
+            namespace: object_namespace,
             key: 'RootFolder'
         });
 
         // An object provider builds Domain Objects
-        openmct.objects.addProvider('TelemetryMainspace', {
+        openmct.objects.addProvider(object_namespace, {
             get: function(identifier) {
                 //console.log("GET! " + identifier.key);//JSON.stringify(identifier, null, 4))
                 return get_openmct_interface().then(function (dictionary) {
@@ -44,7 +45,7 @@ export default function TelemetryDictionaryPlugin() {
                                 telemetry: {
                                     values: measurement.values
                                 },
-                                location: 'TelemetryMainspace:' + measurement.nested_under
+                                location: object_namespace + ':' + measurement.nested_under
                             };
                         } else {
                             // Folder
@@ -53,7 +54,7 @@ export default function TelemetryDictionaryPlugin() {
                                 name: measurement.name,
                                 type: 'folder',
                                 notes:measurement.notes,
-                                location: 'TelemetryMainspace:' + measurement.nested_under
+                                location: object_namespace + ':' + measurement.nested_under
                             };    
                         }
                     }
@@ -64,7 +65,7 @@ export default function TelemetryDictionaryPlugin() {
         // Composition provider
         openmct.composition.addProvider({
             appliesTo: function (domainObject) {
-                return domainObject.identifier.namespace === 'TelemetryMainspace'
+                return domainObject.identifier.namespace === object_namespace
                     && domainObject.type === 'folder';
             },
             load: function (domainObject) {
@@ -76,7 +77,7 @@ export default function TelemetryDictionaryPlugin() {
                             .map(function (m) {
                             // console.log("   load " + domainObject.identifier.key + " -> " + m.key + " under " + m.nested_under)
                             return {
-                                namespace: 'TelemetryMainspace',
+                                namespace: object_namespace,
                                 key: m.key
                             };
                         });
