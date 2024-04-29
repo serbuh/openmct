@@ -8,11 +8,11 @@ export default function RemoteClockProviderPlugin() {
     openmct.objects.addProvider(object_namespace, {
       get: function (identifier) {
         console.log('provider.get( ' + identifier.key + ' )'); //JSON.stringify(identifier, null, 4))
-        return {
+        return Promise.resolve({
           identifier: identifier,
           name: object_name,
           type: object_type
-        };
+        });
       }
     });
 

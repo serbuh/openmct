@@ -131,22 +131,22 @@
       openmct.install(openmct.plugins.RemoteClockHistoricalTelemetryPlugin('RemoteClockDomainObject'));
       openmct.install(openmct.plugins.RemoteClockRealtimeTelemetryPlugin('RemoteClockDomainObject'));
       openmct.install(openmct.plugins.RemoteClockProviderPlugin());
-      // openmct.install(openmct.plugins.RemoteClock({
-      //     namespace: 'RemoteClockMainspace',
-      //     key: 'RemoteClockKey'
-      // }));
+      openmct.install(openmct.plugins.RemoteClock({
+          namespace: 'RemoteClockMainspace',
+          key: 'RemoteClockKey'
+      }));
       openmct.install(
         openmct.plugins.Conductor({
           menuOptions: [
-            // {
-            //   name: "Remote",
-            //   timeSystem: 'utc',
-            //   clock: 'remote-clock',
-            //   clockOffsets: {
-            //       start: - FIFTEEN_MINUTES,
-            //       end: THIRTY_SECONDS
-            //   }
-            // },
+            {
+              name: "Remote",
+              timeSystem: 'utc',
+              clock: 'remote-clock',
+              clockOffsets: {
+                  start: - FIFTEEN_MINUTES,
+                  end: THIRTY_SECONDS
+              }
+            },
             {
               name: 'Realtime',
               timeSystem: 'utc',
