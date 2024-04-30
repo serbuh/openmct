@@ -122,7 +122,31 @@
           creatable: true
         })
       );
+      openmct.install(openmct.plugins.SummaryWidget());
+      openmct.install(openmct.plugins.Notebook());
+      openmct.install(openmct.plugins.LADTable());
+      openmct.install(openmct.plugins.Filters(['table', 'telemetry.plot.overlay']));
+      openmct.install(openmct.plugins.ObjectMigration());
+      openmct.install(
+        openmct.plugins.ClearData(
+          ['table', 'telemetry.plot.overlay', 'telemetry.plot.stacked', 'example.imagery'],
+          { indicator: true }
+        )
+      );
+      openmct.install(openmct.plugins.Clock({ enableClockIndicator: true }));
+      openmct.install(openmct.plugins.Timer());
+      openmct.install(openmct.plugins.Timelist());
+      openmct.install(openmct.plugins.BarChart());
+      openmct.install(openmct.plugins.ScatterPlot());
+      
+      ////////////////////// Custom addons
+      // Install custom plugins
+      openmct.install(openmct.plugins.HistoricalTelemetryPlugin('TelemetryDomainObject'));
+      openmct.install(openmct.plugins.RealtimeTelemetryPlugin('TelemetryDomainObject'));
+      openmct.install(openmct.plugins.TelemetryDictionaryPlugin());
+      openmct.install(openmct.plugins.VideoPlugin());
       openmct.install(openmct.plugins.Timeline());
+
       openmct.install(openmct.plugins.Hyperlink());
       openmct.install(openmct.plugins.UTCTimeSystem());
       openmct.install(
@@ -139,22 +163,27 @@
       // openmct.install(openmct.plugins.RemoteClockHistoricalTelemetryPlugin('RemoteClockDomainObject'));
       // openmct.install(openmct.plugins.RemoteClockRealtimeTelemetryPlugin('RemoteClockDomainObject'));
       // openmct.install(openmct.plugins.RemoteClockProviderPlugin());
-      // openmct.install(openmct.plugins.RemoteClock({
-      //     namespace: 'RemoteClockMainspace',
-      //     key: 'RemoteClockKey'
-      // }));
+      const remoteClockKey = 'remote-clock'
+      const remoteClockName = "Remote Clock"
+      const remoteClockNamespace = "RemoteClockNS"
+      openmct.install(openmct.plugins.RemoteClockPlugin(remoteClockKey,remoteClockName,remoteClockNamespace));
+      openmct.install(openmct.plugins.RemoteClock({
+        namespace: remoteClockNamespace,
+        name: remoteClockName,
+        key: remoteClockKey
+      }));
       openmct.install(
         openmct.plugins.Conductor({
           menuOptions: [
-            // {
-            //   name: "Remote",
-            //   timeSystem: 'utc',
-            //   clock: 'remote-clock',
-            //   clockOffsets: {
-            //       start: - FIFTEEN_MINUTES,
-            //       end: THIRTY_SECONDS
-            //   }
-            // },
+            {
+              name: remoteClockName,
+              timeSystem: 'utc',
+              clock: remoteClockKey,
+              clockOffsets: {
+                  start: - FIFTEEN_MINUTES,
+                  end: THIRTY_SECONDS
+              }
+            },
             {
               name: 'Realtime',
               timeSystem: 'utc',
@@ -244,29 +273,7 @@
           ]
         })
       );
-      openmct.install(openmct.plugins.SummaryWidget());
-      openmct.install(openmct.plugins.Notebook());
-      openmct.install(openmct.plugins.LADTable());
-      openmct.install(openmct.plugins.Filters(['table', 'telemetry.plot.overlay']));
-      openmct.install(openmct.plugins.ObjectMigration());
-      openmct.install(
-        openmct.plugins.ClearData(
-          ['table', 'telemetry.plot.overlay', 'telemetry.plot.stacked', 'example.imagery'],
-          { indicator: true }
-        )
-      );
-      openmct.install(openmct.plugins.Clock({ enableClockIndicator: true }));
-      openmct.install(openmct.plugins.Timer());
-      openmct.install(openmct.plugins.Timelist());
-      openmct.install(openmct.plugins.BarChart());
-      openmct.install(openmct.plugins.ScatterPlot());
-      
-      ////////////////////// Custom addons
-      // Install custom plugins
-      openmct.install(openmct.plugins.HistoricalTelemetryPlugin('TelemetryDomainObject'));
-      openmct.install(openmct.plugins.RealtimeTelemetryPlugin('TelemetryDomainObject'));
-      openmct.install(openmct.plugins.TelemetryDictionaryPlugin());
-      openmct.install(openmct.plugins.VideoPlugin());
+
 
       // Set realtime timeconductor mode as a default
       openmct.time.setMode('realtime');
