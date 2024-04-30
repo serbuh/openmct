@@ -20,7 +20,9 @@ export default function RealtimeTelemetryPlugin(desired_domain_object_type) {
       msg.forEach((point) => {
         //console.log('Realtime ' + point.id + ': ' + point.value + ' timestamp ' + point.timestamp);
         if (listeners[point.id]){
-          listeners[point.id].forEach((f) => f(point));
+          listeners[point.id].forEach(
+            f => f(point)
+          )
         } else {
           console.warn (`${point.id} not in listeners` )
         }
