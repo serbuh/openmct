@@ -19,7 +19,11 @@ export default function RealtimeTelemetryPlugin(desired_domain_object_type) {
       // console.log("realtime msg: ", msg)
       msg.forEach((point) => {
         //console.log('Realtime ' + point.id + ': ' + point.value + ' timestamp ' + point.timestamp);
-        listeners[point.id].forEach((f) => f(point));
+        if (listeners[point.id]){
+          listeners[point.id].forEach((f) => f(point));
+        } else {
+          console.warn (`${point.id} not in listeners` )
+        }
       });
     });
 
@@ -40,8 +44,10 @@ export default function RealtimeTelemetryPlugin(desired_domain_object_type) {
 
         return function unsubscribe() {
           listeners[domainObject.identifier.key]
-            .filter((c) => c === callback)
-            .forEach((_, index, arr) => delete arr[index]);
+            .forEach((c, index, arr) => {
+              if (c === callback) 
+                arr.splice(index,1)
+            });
 
           if (listeners[domainObject.identifier.key].length === 0) {
             delete listeners[domainObject.identifier.key];
