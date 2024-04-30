@@ -126,13 +126,13 @@ function getRealtimeProvider(openmct) {
   return {
     supportsSubscribe: (domainObject) => domainObject.type === 'example.imagery',
     subscribe: (domainObject, callback) => {
-      socket.emit("subscribe-video", domainObject.configuration.imagePortSource)
-      socket.on("video-point", msg => {
+      my_socket.emit("subscribe-video", domainObject.configuration.imagePortSource)
+      my_socket.on("video-point", msg => {
 
         callback(msg);
       })
       return () => {
-        socket.emit("unsubscribe-video", domainObject.configuration.imagePortSource)
+        my_socket.emit("unsubscribe-video", domainObject.configuration.imagePortSource)
       };
     }
   };

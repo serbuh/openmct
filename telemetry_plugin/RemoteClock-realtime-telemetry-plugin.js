@@ -7,15 +7,7 @@ let object_key = 'RemoteClockKey';
 export default function RemoteClockRealtimeTelemetryPlugin(desired_domain_object_type) {
   return function (openmct) {
     let callback = null;
-    let socket = io();
-    socket.on('connect', () => {
-      console.log('connected to socket (RemoteClock)');
-    });
-    socket.on('disconnect', () => {
-      console.log('disconnected from socket (RemoteClock)');
-    });
-
-    socket.on('realtime-tick', (msg) => {
+    my_socket.on('realtime-tick', (msg) => {
       // Get realtime message
       console.log('Tick: ', msg.timestamp);
       // msg.forEach((point) => {

@@ -23,13 +23,13 @@
         const play_btn = document.getElementById("play")
         const pause_btn = document.getElementById("pause")
         const restart_btn = document.getElementById("restart")
-        const socket = io()
-        socket.on("connect", ()=>{
-            socket.emit ("start-live-video")
+        const my_socket = io()
+        my_socket.on("connect", ()=>{
+            my_socket.emit ("start-live-video")
             console.log("connected to socket")
         })
-        socket.on("disconnect", ()=> {
-            socket.emit ("stop-live-video")
+        my_socket.on("disconnect", ()=> {
+            my_socket.emit ("stop-live-video")
             console.log("disconnected from socket")
         })
 
@@ -46,16 +46,16 @@
         let last_image_data = ""
         var changed = false
         
-        socket.on("video-file-loaded", (data)=> {
+        my_socket.on("video-file-loaded", (data)=> {
             console.log("video file loaded", data)
             time_range.max = data.frames_count
         })
 
-        socket.on("video-file-ended", (data)=> {
+        my_socket.on("video-file-ended", (data)=> {
             console.log("video file ended", ended)
         })
 
-        socket.on("live-video", frame => {
+        my_socket.on("live-video", frame => {
             frames_count = frame.frames_count
             console.log("Frame count: " + frames_count)
             // time_range.max = frame.frames_count

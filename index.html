@@ -100,6 +100,14 @@
       const TWO_HOURS = ONE_HOUR * 2;
       const ONE_DAY = ONE_HOUR * 24;
 
+      var my_socket = io();
+      my_socket.on('connect', () => {
+        console.log('connected to socket (RemoteClock)');
+      });
+      my_socket.on('disconnect', () => {
+        console.log('disconnected from socket (RemoteClock)');
+      });      
+
       openmct.install(openmct.plugins.LocalStorage());
 
       openmct.install(openmct.plugins.example.Generator());
